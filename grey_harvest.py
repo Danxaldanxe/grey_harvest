@@ -183,7 +183,7 @@ class GreyHarvester(object):
         raw_html = response.text
     
         ''' convert raw html into BeautifulSoup object '''
-        soup = BeautifulSoup(raw_html, 'lxml')
+        soup = BeautifulSoup(raw_html, 'html.parser')
 
         for url in soup.select('table tr td table tr td a'):
             if 'elite #' in url.text:
